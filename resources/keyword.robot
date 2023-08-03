@@ -24,7 +24,7 @@ Recup Fichier excel améliorer
     Set Global Variable    ${mdp}
 
 Ecrire sur Fichier excel 
-    [Arguments]    ${nomExcel}    ${ligne}    
+    [Arguments]    ${nomExcel}    ${prenomExcel}    ${mail}    ${mdp}  
     Open Excel Document    ${data}    1
     ${Nbligne} =  set variable  1
     ${check} =    Read Excel Cell     ${Nbligne}    1
