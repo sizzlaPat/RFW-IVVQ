@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230803 16:07:51.433" rpa="false" schemaversion="4">
+<suite id="s1" name="Main Script" source="c:\Users\utilisateur\Documents\GitHub\RFW-IVVQ\main_script.robot">
+<test id="s1-t1" name="Lecture fichier excel" line="66">
+<kw name="Recup Fichier excel améliorer" library="keyword">
+<arg>connexion</arg>
+<arg>2</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${data}</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230803 16:07:52.300" endtime="20230803 16:07:52.311"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${nomExcel}</var>
+<arg>${ligne}</arg>
+<arg>1</arg>
+<arg>${feuille}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230803 16:07:52.312" level="INFO">${nomExcel} = Davis</msg>
+<status status="PASS" starttime="20230803 16:07:52.312" endtime="20230803 16:07:52.313"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${prenomExcel}</var>
+<arg>${ligne}</arg>
+<arg>2</arg>
+<arg>${feuille}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230803 16:07:52.313" level="INFO">${prenomExcel} = Joseph</msg>
+<status status="PASS" starttime="20230803 16:07:52.313" endtime="20230803 16:07:52.314"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${mail}</var>
+<arg>${ligne}</arg>
+<arg>3</arg>
+<arg>${feuille}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230803 16:07:52.315" level="INFO">${mail} = cdominguez@example.org</msg>
+<status status="PASS" starttime="20230803 16:07:52.314" endtime="20230803 16:07:52.315"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${mdp}</var>
+<arg>${ligne}</arg>
+<arg>4</arg>
+<arg>${feuille}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230803 16:07:52.316" level="INFO">${mdp} = erreur</msg>
+<status status="PASS" starttime="20230803 16:07:52.315" endtime="20230803 16:07:52.316"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nomExcel}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230803 16:07:52.317" level="INFO">${nomExcel} = Davis</msg>
+<status status="PASS" starttime="20230803 16:07:52.317" endtime="20230803 16:07:52.317"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${prenomExcel}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230803 16:07:52.318" level="INFO">${prenomExcel} = Joseph</msg>
+<status status="PASS" starttime="20230803 16:07:52.318" endtime="20230803 16:07:52.318"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${mail}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230803 16:07:52.319" level="INFO">${mail} = cdominguez@example.org</msg>
+<status status="PASS" starttime="20230803 16:07:52.318" endtime="20230803 16:07:52.319"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${mdp}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230803 16:07:52.320" level="INFO">${mdp} = erreur</msg>
+<status status="PASS" starttime="20230803 16:07:52.319" endtime="20230803 16:07:52.320"/>
+</kw>
+<status status="PASS" starttime="20230803 16:07:52.299" endtime="20230803 16:07:52.321"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${nomExcel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 16:07:52.321" endtime="20230803 16:07:52.322"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prenomExcel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 16:07:52.323" endtime="20230803 16:07:52.323"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mail}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 16:07:52.324" endtime="20230803 16:07:52.324"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mdp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 16:07:52.325" endtime="20230803 16:07:52.326"/>
+</kw>
+<status status="PASS" starttime="20230803 16:07:52.299" endtime="20230803 16:07:52.326"/>
+</test>
+<status status="PASS" starttime="20230803 16:07:51.438" endtime="20230803 16:07:52.328"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Main Script">Main Script</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230803 16:07:51.829" level="ERROR">Error in file 'c:\Users\utilisateur\Documents\GitHub\RFW-IVVQ\resources\keyword.robot' on line 5: Resource file '...main_script.robot' does not exist.</msg>
+<msg timestamp="20230803 16:07:51.832" level="ERROR">Error in file 'c:\Users\utilisateur\Documents\GitHub\RFW-IVVQ\main_script.robot' on line 3: Resource file 'resourcesvariables.robot' does not exist.</msg>
+</errors>
+</robot>
