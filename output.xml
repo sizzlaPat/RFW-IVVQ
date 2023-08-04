@@ -1,308 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230804 12:48:19.540" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230804 15:56:12.341" rpa="false" schemaversion="4">
 <suite id="s1" name="Main Script" source="C:\Users\utilisateur\Documents\GitHub\RFW-IVVQ\main_script.robot">
-<test id="s1-t1" name="New User -empty required fiel for adress" line="109">
-<kw name="Set Variable" library="BuiltIn">
-<var>${add}</var>
-<arg>Street is mandatory. Please provide a street.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230804 12:48:20.566" level="INFO">${add} = Street is mandatory. Please provide a street.</msg>
-<status status="PASS" starttime="20230804 12:48:20.565" endtime="20230804 12:48:20.566"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{errors_Msg_Required_Adress}</var>
-<arg>${add}</arg>
-<arg>Code postal obligatoire.</arg>
-<arg>La ville est obligatoire. Veuillez entrer une ville.</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20230804 12:48:20.570" level="INFO">@{errors_Msg_Required_Adress} = [ Street is mandatory. Please provide a street. | Code postal obligatoire. | La ville est obligatoire. Veuillez entrer une ville. ]</msg>
-<status status="PASS" starttime="20230804 12:48:20.569" endtime="20230804 12:48:20.570"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${email}</var>
-<msg timestamp="20230804 12:48:20.572" level="INFO">${email} = berthelotaurelie@example.net</msg>
-<status status="PASS" starttime="20230804 12:48:20.571" endtime="20230804 12:48:20.572"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${mot de passe}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20230804 12:48:20.574" level="INFO">${mot de passe} = T+0@YrESut</msg>
-<status status="PASS" starttime="20230804 12:48:20.573" endtime="20230804 12:48:20.574"/>
-</kw>
-<kw name="Phone Number" library="FakerLibrary">
-<var>${Telephone}</var>
-<msg timestamp="20230804 12:48:20.575" level="INFO">${Telephone} = 03 28 96 31 96</msg>
-<status status="PASS" starttime="20230804 12:48:20.575" endtime="20230804 12:48:20.575"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${password}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20230804 12:48:20.576" level="INFO">${password} = e(70X+frHG</msg>
-<status status="PASS" starttime="20230804 12:48:20.576" endtime="20230804 12:48:20.576"/>
-</kw>
-<kw name="First Name" library="FakerLibrary">
-<var>${FirstName}</var>
-<msg timestamp="20230804 12:48:20.577" level="INFO">${FirstName} = Élise</msg>
-<status status="PASS" starttime="20230804 12:48:20.577" endtime="20230804 12:48:20.577"/>
-</kw>
-<kw name="Name Male" library="FakerLibrary">
-<var>${LastName}</var>
-<msg timestamp="20230804 12:48:20.578" level="INFO">${LastName} = Louis Dijoux</msg>
-<status status="PASS" starttime="20230804 12:48:20.578" endtime="20230804 12:48:20.579"/>
-</kw>
+<test id="s1-t1" name="New_USER with valid" line="63">
 <kw name="openNewBrowser" library="keyword">
 <arg>${website_url}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the given ``url``.</doc>
-<msg timestamp="20230804 12:48:20.581" level="INFO">Opening browser 'Chrome' to base url 'https://www.raja.fr/'.</msg>
-<status status="PASS" starttime="20230804 12:48:20.580" endtime="20230804 12:48:24.015"/>
+<msg timestamp="20230804 15:56:13.109" level="INFO">Opening browser 'Chrome' to base url 'https://www.raja.fr/'.</msg>
+<status status="PASS" starttime="20230804 15:56:13.109" endtime="20230804 15:56:15.762"/>
 </kw>
-<status status="PASS" starttime="20230804 12:48:20.579" endtime="20230804 12:48:24.015"/>
+<status status="PASS" starttime="20230804 15:56:13.108" endtime="20230804 15:56:15.762"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230804 12:48:24.017" endtime="20230804 12:48:24.355"/>
+<status status="PASS" starttime="20230804 15:56:15.762" endtime="20230804 15:56:15.992"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
+<arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:27.357" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:24.355" endtime="20230804 12:48:27.357"/>
+<msg timestamp="20230804 15:56:17.993" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:15.993" endtime="20230804 15:56:17.993"/>
+</kw>
+<kw name="Scenario Cas_passant" library="keyword">
+<arg>${email}</arg>
+<arg>${mot de passe}</arg>
+<arg>${FirstName}</arg>
+<arg>${LastName}</arg>
+<arg>${Telephone}</arg>
+<arg>${adress}</arg>
+<arg>${ZIP Code}</arg>
+<arg>${Town}</arg>
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20230804 15:56:17.999" level="INFO">${email} = corinne17@example.com</msg>
+<status status="PASS" starttime="20230804 15:56:17.998" endtime="20230804 15:56:17.999"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${mot de passe}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20230804 15:56:18.001" level="INFO">${mot de passe} = !#o$8+MksI</msg>
+<status status="PASS" starttime="20230804 15:56:18.000" endtime="20230804 15:56:18.001"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${Telephone}</var>
+<msg timestamp="20230804 15:56:18.002" level="INFO">${Telephone} = +33 2 58 23 32 51</msg>
+<status status="PASS" starttime="20230804 15:56:18.001" endtime="20230804 15:56:18.002"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${password}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20230804 15:56:18.003" level="INFO">${password} = &amp;_1HA8rs*N</msg>
+<status status="PASS" starttime="20230804 15:56:18.003" endtime="20230804 15:56:18.004"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${FirstName}</var>
+<msg timestamp="20230804 15:56:18.004" level="INFO">${FirstName} = Jeannine</msg>
+<status status="PASS" starttime="20230804 15:56:18.004" endtime="20230804 15:56:18.005"/>
+</kw>
+<kw name="Name Male" library="FakerLibrary">
+<var>${LastName}</var>
+<msg timestamp="20230804 15:56:18.006" level="INFO">${LastName} = Paul Grondin</msg>
+<status status="PASS" starttime="20230804 15:56:18.005" endtime="20230804 15:56:18.006"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${adress}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20230804 15:56:18.007" level="INFO">${adress} = 14, rue Le Goff
+65717 Diallo</msg>
+<status status="PASS" starttime="20230804 15:56:18.006" endtime="20230804 15:56:18.007"/>
+</kw>
+<kw name="Postcode" library="FakerLibrary">
+<var>${ZIP Code}</var>
+<doc>Randomly returns a postcode generated from existing french department number.
+exemple: '33260'</doc>
+<msg timestamp="20230804 15:56:18.008" level="INFO">${ZIP Code} = 92144</msg>
+<status status="PASS" starttime="20230804 15:56:18.007" endtime="20230804 15:56:18.008"/>
+</kw>
+<kw name="City" library="FakerLibrary">
+<var>${Town}</var>
+<doc>:example: 'Sashabury'</doc>
+<msg timestamp="20230804 15:56:18.009" level="INFO">${Town} = Martel</msg>
+<status status="PASS" starttime="20230804 15:56:18.008" endtime="20230804 15:56:18.009"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=/html/body/div[4]/div[2]/button</arg>
 <doc>Click element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:27.360" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[2]/button'.</msg>
-<status status="PASS" starttime="20230804 12:48:27.357" endtime="20230804 12:48:27.602"/>
+<msg timestamp="20230804 15:56:18.009" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230804 15:56:18.009" endtime="20230804 15:56:18.117"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:28.604" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230804 12:48:27.603" endtime="20230804 12:48:28.604"/>
+<msg timestamp="20230804 15:56:19.117" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230804 15:56:18.117" endtime="20230804 15:56:19.117"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//*[@id="dropdown-account"]/button</arg>
 <doc>Clicks button identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:28.606" level="INFO">Clicking button 'xpath=//*[@id="dropdown-account"]/button'.</msg>
-<status status="PASS" starttime="20230804 12:48:28.605" endtime="20230804 12:48:28.808"/>
+<msg timestamp="20230804 15:56:19.117" level="INFO">Clicking button 'xpath=//*[@id="dropdown-account"]/button'.</msg>
+<status status="PASS" starttime="20230804 15:56:19.117" endtime="20230804 15:56:19.197"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:30.809" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:28.809" endtime="20230804 12:48:30.809"/>
+<msg timestamp="20230804 15:56:21.197" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:19.197" endtime="20230804 15:56:21.197"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//*[@id="redirectCreateAccount"]</arg>
 <doc>Clicks button identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:30.809" level="INFO">Clicking button 'xpath=//*[@id="redirectCreateAccount"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:30.809" endtime="20230804 12:48:32.149"/>
+<msg timestamp="20230804 15:56:21.197" level="INFO">Clicking button 'xpath=//*[@id="redirectCreateAccount"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:21.197" endtime="20230804 15:56:22.313"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:34.150" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:32.149" endtime="20230804 12:48:34.150"/>
+<msg timestamp="20230804 15:56:24.315" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:22.313" endtime="20230804 15:56:24.315"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="userInfoForm"]/div/fieldset/div[2]/label/span</arg>
 <doc>Click element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:34.150" level="INFO">Clicking element 'xpath=//*[@id="userInfoForm"]/div/fieldset/div[2]/label/span'.</msg>
-<status status="PASS" starttime="20230804 12:48:34.150" endtime="20230804 12:48:34.271"/>
+<msg timestamp="20230804 15:56:24.315" level="INFO">Clicking element 'xpath=//*[@id="userInfoForm"]/div/fieldset/div[2]/label/span'.</msg>
+<status status="PASS" starttime="20230804 15:56:24.315" endtime="20230804 15:56:24.375"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:36.272" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:34.272" endtime="20230804 12:48:36.272"/>
+<msg timestamp="20230804 15:56:26.375" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:24.375" endtime="20230804 15:56:26.375"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="IdentifiersLogin"]</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:36.272" level="INFO">Typing text 'berthelotaurelie@example.net' into text field 'xpath=//*[@id="IdentifiersLogin"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:36.272" endtime="20230804 12:48:36.510"/>
+<msg timestamp="20230804 15:56:26.377" level="INFO">Typing text 'corinne17@example.com' into text field 'xpath=//*[@id="IdentifiersLogin"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:26.376" endtime="20230804 15:56:26.522"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:38.511" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:36.510" endtime="20230804 12:48:38.511"/>
+<msg timestamp="20230804 15:56:28.522" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:26.522" endtime="20230804 15:56:28.522"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="NewPwdPassword"]</arg>
 <arg>${mot de passe}</arg>
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:38.514" level="INFO">Typing text 'T+0@YrESut' into text field 'xpath=//*[@id="NewPwdPassword"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:38.513" endtime="20230804 12:48:38.949"/>
+<msg timestamp="20230804 15:56:28.523" level="INFO">Typing text '!#o$8+MksI' into text field 'xpath=//*[@id="NewPwdPassword"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:28.523" endtime="20230804 15:56:28.647"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:40.949" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:38.949" endtime="20230804 12:48:40.949"/>
+<msg timestamp="20230804 15:56:30.648" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:28.647" endtime="20230804 15:56:30.648"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="civilitie"]/option[3]</arg>
 <doc>Click element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:40.950" level="INFO">Clicking element 'xpath=//*[@id="civilitie"]/option[3]'.</msg>
-<status status="PASS" starttime="20230804 12:48:40.950" endtime="20230804 12:48:41.055"/>
+<msg timestamp="20230804 15:56:30.648" level="INFO">Clicking element 'xpath=//*[@id="civilitie"]/option[3]'.</msg>
+<status status="PASS" starttime="20230804 15:56:30.648" endtime="20230804 15:56:30.688"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:43.057" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:41.056" endtime="20230804 12:48:43.057"/>
+<msg timestamp="20230804 15:56:32.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:30.688" endtime="20230804 15:56:32.688"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="InfoFirstname"]</arg>
 <arg>${FirstName}</arg>
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:43.060" level="INFO">Typing text 'Élise' into text field 'xpath=//*[@id="InfoFirstname"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:43.059" endtime="20230804 12:48:43.272"/>
+<msg timestamp="20230804 15:56:32.688" level="INFO">Typing text 'Jeannine' into text field 'xpath=//*[@id="InfoFirstname"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:32.688" endtime="20230804 15:56:32.772"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:45.273" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:43.273" endtime="20230804 12:48:45.273"/>
+<msg timestamp="20230804 15:56:34.772" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:32.772" endtime="20230804 15:56:34.772"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="InfoLastname"]</arg>
 <arg>${LastName}</arg>
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:45.275" level="INFO">Typing text 'Louis Dijoux' into text field 'xpath=//*[@id="InfoLastname"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:45.275" endtime="20230804 12:48:45.508"/>
+<msg timestamp="20230804 15:56:34.774" level="INFO">Typing text 'Paul Grondin' into text field 'xpath=//*[@id="InfoLastname"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:34.773" endtime="20230804 15:56:34.897"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:48.509" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:45.509" endtime="20230804 12:48:48.510"/>
+<msg timestamp="20230804 15:56:37.897" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:34.897" endtime="20230804 15:56:37.897"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="directPhone"]</arg>
 <arg>${Telephone}</arg>
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:48.512" level="INFO">Typing text '03 28 96 31 96' into text field 'xpath=//*[@id="directPhone"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:48.512" endtime="20230804 12:48:48.945"/>
+<msg timestamp="20230804 15:56:37.899" level="INFO">Typing text '+33 2 58 23 32 51' into text field 'xpath=//*[@id="directPhone"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:37.898" endtime="20230804 15:56:38.021"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:50.947" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:48.946" endtime="20230804 12:48:50.947"/>
+<msg timestamp="20230804 15:56:40.021" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:38.021" endtime="20230804 15:56:40.021"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//*[@id="nextStepBtn"]</arg>
 <doc>Clicks button identified by ``locator``.</doc>
-<msg timestamp="20230804 12:48:50.948" level="INFO">Clicking button 'xpath=//*[@id="nextStepBtn"]'.</msg>
-<status status="PASS" starttime="20230804 12:48:50.948" endtime="20230804 12:48:51.188"/>
+<msg timestamp="20230804 15:56:40.022" level="INFO">Clicking button 'xpath=//*[@id="nextStepBtn"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:40.022" endtime="20230804 15:56:40.154"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:48:53.191" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:48:51.189" endtime="20230804 12:48:53.192"/>
+<msg timestamp="20230804 15:56:42.154" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:40.154" endtime="20230804 15:56:42.154"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="CompaniesAddress"]</arg>
+<arg>${adress}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20230804 15:56:42.155" level="INFO">Typing text '14, rue Le Goff
+65717 Diallo' into text field 'xpath=//*[@id="CompaniesAddress"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:42.155" endtime="20230804 15:56:42.297"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230804 15:56:43.299" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230804 15:56:42.297" endtime="20230804 15:56:43.299"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="CompaniesPostCode"]</arg>
+<arg>${ZIP Code}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20230804 15:56:43.300" level="INFO">Typing text '92144' into text field 'xpath=//*[@id="CompaniesPostCode"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:43.299" endtime="20230804 15:56:43.420"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230804 15:56:45.422" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:43.420" endtime="20230804 15:56:45.422"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="CompaniesCity"]</arg>
+<arg>${Town}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20230804 15:56:45.424" level="INFO">Typing text 'Martel' into text field 'xpath=//*[@id="CompaniesCity"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:45.423" endtime="20230804 15:56:45.541"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230804 15:56:47.542" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:45.541" endtime="20230804 15:56:47.542"/>
 </kw>
 <kw name="Execute Manual Step" library="Dialogs">
 <arg>Please complete the CAPTCHA portion of the form.</arg>
 <doc>Pauses execution until user sets the keyword status.</doc>
-<status status="PASS" starttime="20230804 12:48:53.192" endtime="20230804 12:49:12.453"/>
+<status status="PASS" starttime="20230804 15:56:47.543" endtime="20230804 15:56:52.147"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:49:14.455" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:49:12.454" endtime="20230804 12:49:14.455"/>
+<msg timestamp="20230804 15:56:54.149" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:52.148" endtime="20230804 15:56:54.149"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="submitAllForm"]</arg>
 <doc>Click element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:49:14.458" level="INFO">Clicking element 'xpath=//*[@id="submitAllForm"]'.</msg>
-<status status="PASS" starttime="20230804 12:49:14.457" endtime="20230804 12:49:14.610"/>
+<msg timestamp="20230804 15:56:54.150" level="INFO">Clicking element 'xpath=//*[@id="submitAllForm"]'.</msg>
+<status status="PASS" starttime="20230804 15:56:54.150" endtime="20230804 15:56:54.235"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:49:16.612" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230804 12:49:14.610" endtime="20230804 12:49:16.612"/>
+<msg timestamp="20230804 15:56:56.236" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230804 15:56:54.235" endtime="20230804 15:56:56.236"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${Street}</var>
-<arg>//*[@id="userInfoCompletedForm"]/div/div[12]/div/label[2]</arg>
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:49:16.736" level="INFO">${Street} = Street is mandatory. Please provide a street.</msg>
-<status status="PASS" starttime="20230804 12:49:16.614" endtime="20230804 12:49:16.736"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:49:17.738" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230804 12:49:16.738" endtime="20230804 12:49:17.738"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${postCode}</var>
-<arg>//*[@id="userInfoCompletedForm"]/div/div[15]/div[1]/label[2]</arg>
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:49:17.872" level="INFO">${postCode} = Code postal obligatoire.</msg>
-<status status="PASS" starttime="20230804 12:49:17.740" endtime="20230804 12:49:17.873"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:49:18.875" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230804 12:49:17.874" endtime="20230804 12:49:18.875"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${ville}</var>
-<arg>//*[@id="userInfoCompletedForm"]/div/div[15]/div[2]/label[2]</arg>
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<msg timestamp="20230804 12:49:18.937" level="INFO">${ville} = La ville est obligatoire. Veuillez entrer une ville.</msg>
-<status status="PASS" starttime="20230804 12:49:18.879" endtime="20230804 12:49:18.937"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${Street}</arg>
-<arg>${errors_Msg_Required_Adress}[0]</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230804 12:49:18.938" endtime="20230804 12:49:18.938"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${postCode}</arg>
-<arg>${errors_Msg_Required_Adress}[1]</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230804 12:49:18.939" endtime="20230804 12:49:18.939"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${ville}</arg>
-<arg>${errors_Msg_Required_Adress}[2]</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230804 12:49:18.940" endtime="20230804 12:49:18.941"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230804 12:49:28.943" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20230804 12:49:18.941" endtime="20230804 12:49:28.943"/>
+<status status="PASS" starttime="20230804 15:56:17.995" endtime="20230804 15:56:56.236"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20230804 12:49:28.944" endtime="20230804 12:49:31.194"/>
+<status status="PASS" starttime="20230804 15:56:56.238" endtime="20230804 15:56:58.355"/>
 </kw>
-<tag>E02</tag>
-<status status="PASS" starttime="20230804 12:48:20.564" endtime="20230804 12:49:31.197"/>
+<tag>TEST</tag>
+<status status="PASS" starttime="20230804 15:56:13.107" endtime="20230804 15:56:58.357"/>
 </test>
-<status status="PASS" starttime="20230804 12:48:19.546" endtime="20230804 12:49:31.203"/>
+<status status="PASS" starttime="20230804 15:56:12.342" endtime="20230804 15:56:58.363"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">E02</stat>
+<stat pass="1" fail="0" skip="0">TEST</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Main Script">Main Script</stat>

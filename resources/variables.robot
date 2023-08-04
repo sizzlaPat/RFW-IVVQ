@@ -7,3 +7,13 @@ ${nomExcel}
 ${prenomExcel}
 ${mail}
 ${mdp}
+#CREATE A NEW USER case: valid credentialsgid
+${email}=   
+${mot de passe} 
+${Telephone} 
+${password} 
+${FirstName}
+${LastName}
+${adress} 
+${ZIP Code} 
+${Town}
