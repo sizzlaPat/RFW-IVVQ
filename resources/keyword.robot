@@ -1,8 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    variables.robot
 Library     ExcelLibrary
-#Resource    .\..\main_script.robot
+Resource     variables.robot
+
+
+
+
 *** Keyword *** 
 # BROWSER MANAGEMENT
 openNewBrowser
@@ -23,7 +26,7 @@ Recup Fichier excel améliorer
     Set Global Variable    ${mail}
     Set Global Variable    ${mdp}
 
-Ecrire sur Fichier excel 
+ecriturer donnees 
     [Arguments]    ${nomExcel}    ${prenomExcel}    ${mail}    ${mdp}  
     Open Excel Document    ${data}    1
     ${Nbligne} =  set variable  1
@@ -37,7 +40,13 @@ Ecrire sur Fichier excel
     Write Excel Cell    ${Nbligne}    3  ${mail} 
     Write Excel Cell    ${Nbligne}    4  ${mdp}
 
-    Save Excel Document  ${data} 
+    Save Excel Document  ${data}
+
+Scroll To Element
+    [Arguments]  ${locator}
+    ${x}=        Get Horizontal Position  ${locator}
+    ${y}=        Get Vertical Position    ${locator}
+    Execute Javascript  window.scrollTo(${x}, ${y})
 
    
     
